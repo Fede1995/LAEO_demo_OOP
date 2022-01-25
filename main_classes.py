@@ -298,9 +298,9 @@ class Video:
             def save_interactions(self, path: Path):
                 if path.is_dir():
                     destination = path / 'LAEO' / (str(self.frame_instance.frame_number) + '.csv')
-                    self.laeo_matrix.to_csv(destination, sep=',')
+                    self.laeo_matrix.to_csv(destination, sep=',', float_format='%.2f')
                     destination = path / 'Interactions' / (str(self.frame_instance.frame_number) + '.csv')
-                    self.interaction_matrix.to_csv(destination, sep=',')
+                    self.interaction_matrix.to_csv(destination, sep=',', float_format='%.2f')
 
 
 class LAEO_matrix:
